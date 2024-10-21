@@ -151,7 +151,7 @@ end, function()
 	Screen.Parent = (Local.Player.PlayerGui);
 end)
 
--- Cmd [FUNCTIONS]
+-- JKCMD [FUNCTIONS]
 local Lower = string.lower;
 local Split = string.split;
 local Sub = string.sub;
