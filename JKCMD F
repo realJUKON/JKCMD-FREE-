@@ -131,7 +131,7 @@ else
 	Screen = Services.InsertService:LoadLocalAsset("rbxassetid://17078695559");
 end
 
-local Cmd, Bar = Screen.Command, Screen.Command.Bar;
+local JKCMD, Bar = Screen.Command, Screen.Command.Bar;
 local Blurred, Lib, Example, Open, Autofill, Box, Recommend, Popup, ColorPopup, pressTab, Protection =
 {},
 Screen.Library,
