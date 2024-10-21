@@ -1,3 +1,10 @@
+--[[
+	Cmd V1
+	GitHub: "https://github.com/realJUKON";
+	DISCORD Server: "discord.gg/7bVxjGXpuy"
+	DISCORD: "realjukon";
+]]
+
 if not game:IsLoaded() then
 	warn("Waiting for the game to load..")
 	game.Loaded:Wait();
@@ -131,7 +138,7 @@ else
 	Screen = Services.InsertService:LoadLocalAsset("rbxassetid://17078695559");
 end
 
-local JKCMD, Bar = Screen.Command, Screen.Command.Bar;
+local Cmd, Bar = Screen.Command, Screen.Command.Bar;
 local Blurred, Lib, Example, Open, Autofill, Box, Recommend, Popup, ColorPopup, pressTab, Protection =
 {},
 Screen.Library,
@@ -151,7 +158,7 @@ end, function()
 	Screen.Parent = (Local.Player.PlayerGui);
 end)
 
--- JKCMD [FUNCTIONS]
+-- Cmd [FUNCTIONS]
 local Lower = string.lower;
 local Split = string.split;
 local Sub = string.sub;
