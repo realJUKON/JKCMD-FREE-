@@ -423,3 +423,5 @@ end
 function freecam:StopFreecam()
 	StopFreecam()
 end
+
+return freecam
