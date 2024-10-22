@@ -1,0 +1,111 @@
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local UserInputService = game:GetService("UserInputService")
+
+local Color = {}
+
+function Color:Setup(Tab, Function)
+	local DisplayColor = Tab:FindFirstChild("ColorDisplay")
+	local DisplayValue = Tab:FindFirstChild("ValueFrame")
+	local HueFrame = Tab:FindFirstChild("HueSaturationFrame")
+	local Joystick = HueFrame:FindFirstChild("Joystick")
+	local Pointer = DisplayValue:FindFirstChild("Pointer")
+	local NewColor = nil
+
+	Tab.Buttons.Done.MouseButton1Click:Connect(function()
+		Function(NewColor)
+		for Index = 1, 10 do
+			task.wait() 
+			NewColor = "Stop."
+		end
+	end)
+	
+	Tab.Buttons.Close.MouseButton1Click:Connect(function()
+		for Index = 1, 10 do
+			task.wait() 
+			NewColor = "Stop."
+		end
+	end)
+
+	local OverUI = false
+
+	HueFrame.MouseEnter:connect(function()
+		OverUI = true
+	end)
+
+	HueFrame.MouseLeave:connect(function()
+		OverUI = false
+	end)
+
+	local OverUI2 = false
+
+	DisplayValue.MouseEnter:connect(function()
+		OverUI2 = true
+	end)
+
+	DisplayValue.MouseLeave:connect(function()
+		OverUI2 = false
+	end)
+
+	local Hue1 = nil
+	local Hue2 = nil
+	local Hue3 = nil
+
+	while Tab do
+		task.wait()
+		
+		if OverUI == true or OverUI2 == true then
+			for i, v in next, UserInputService:GetMouseButtonsPressed() do
+				if v.UserInputType.Name == "MouseButton1" then
+					local GuiAbX = HueFrame.AbsolutePosition.X
+					local GuiAbY = HueFrame.AbsolutePosition.Y
+
+					local Xpos = (Mouse.X) - GuiAbX
+					local Ypos = (Mouse.Y) - GuiAbY
+					local altxpos = (Mouse.X) - GuiAbX
+
+					if OverUI == true then
+						if Xpos >= (HueFrame.AbsolutePosition.X + HueFrame.AbsoluteSize.X) - Joystick.AbsoluteSize.X then
+							Xpos = (HueFrame.AbsolutePosition.X + HueFrame.AbsoluteSize.X) - Joystick.AbsoluteSize.X
+						end
+						if Xpos <= 0 then
+							Xpos = 0
+						end
+
+						if Ypos >= (HueFrame.AbsolutePosition.Y + HueFrame.AbsoluteSize.Y) - Joystick.AbsoluteSize.Y then
+							Ypos = (HueFrame.AbsolutePosition.Y + HueFrame.AbsoluteSize.Y) - Joystick.AbsoluteSize.Y
+						elseif Ypos <= 0 then
+							Ypos = 0
+						end
+
+						Joystick.Position = UDim2.new(0, Xpos, 0, Ypos)
+
+						Hue1 = Xpos / HueFrame.AbsoluteSize.X
+						Hue2 = 1 - (Ypos / HueFrame.AbsoluteSize.Y)
+					end
+
+					if OverUI2 == true then
+						if altxpos >= (DisplayValue.AbsolutePosition.X + DisplayValue.AbsoluteSize.X) - Pointer.AbsoluteSize.X then
+							altxpos = (DisplayValue.AbsolutePosition.X + DisplayValue.AbsoluteSize.X) - Pointer.AbsoluteSize.X
+						end
+						if altxpos <= 0 then
+							altxpos = 0
+						end
+
+						Pointer.Position = UDim2.new(0, altxpos, 0, 0)
+
+						Hue3 = altxpos / DisplayValue.AbsoluteSize.X
+					end
+				end
+			end
+		end
+		
+		if NewColor == "Stop." then break end
+
+		NewColor = Color3.fromHSV(Hue1, Hue2, Hue3)
+
+		HueFrame.BackgroundColor3 = Color3.fromHSV(1, 1, Hue3)
+		DisplayColor.BackgroundColor3 = NewColor
+	end
+end
+
+return Color
