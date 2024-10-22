@@ -1,9 +1,11 @@
 --[[ 
-	JKCMD V1
+
+	JKCMD V2
 	GitHub: "https://github.com/realJUKON";
 	DISCORD Server: "discord.gg/7bVxjGXpuy"
 	DISCORD: "realjukon";
 ------------------------------------------------------------
+
 	[+] added | [/] changed | [-] removed 
 
 	>> added+
@@ -6771,7 +6773,7 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome",
+	Title = "JKCMD V2",
 	Description = Format("Loaded in %.2f seconds (this is unfinished)", tick() - Speed),
 	Duration = 5,
 	Type = "Info",
