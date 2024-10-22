@@ -816,10 +816,10 @@ local Modules = {
 
 -- Command [MODULES]
 Spawn(function()
-	Modules.Freecam = loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/assets/freecam"))();
-	Modules.ColorPicker = loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/assets/colorpicker"))();
-	Modules.Bhop = loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/assets/bhop"))();
-	Modules.Blur = loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/assets/blur"))();
+	Modules.Freecam = loadstring(game:HttpGet("https://raw.githubusercontent.com/realJUKON/JKCMD-FREE-/refs/heads/main/freecam"))();
+	Modules.ColorPicker = loadstring(game:HttpGet("https://github.com/realJUKON/JKCMD-FREE-/blob/main/color%20picker%20system"))();
+	Modules.Bhop = loadstring(game:HttpGet("https://raw.githubusercontent.com/realJUKON/JKCMD-FREE-/refs/heads/main/Bhop"))();
+	Modules.Blur = loadstring(game:HttpGet("https://raw.githubusercontent.com/realJUKON/JKCMD-FREE-/refs/heads/main/Local%20blur"))();
 end)
 
 local PromptChangeRigType = function(RigType)
@@ -2456,7 +2456,7 @@ Command.Add({
 
 			Library.new("Label", { Title = "Seperating arguments for running commands", Description = "To seperate the arguments for example ;command arg1, arg2 - you need to seperate it using a ',' (comma)", Parent = MainTab })
 			Library.new("Label", { Title = "Player arguments", Description = "The current arguments for getting players are - their username, their displayname, all, others, seated, stood, me, closest, farthest, *team_name, enemies, dead, alive, friends, nonfriends", Parent = MainTab })
-			Library.new("Label", { Title = "Adding plugins", Description = "For a tutorial on how to add plugins visit - github.com/lxte/cmd/wiki/Plugins", Parent = MainTab })
+			Library.new("Label", { Title = "Adding plugins", Description = "For a tutorial on how to add plugins visit - discord.gg/7bVxjGXpuy", Parent = MainTab })
 			Library.new("Label", { Title = "Applying themes", Description = "To apply themes open the Settings tab (by using the 'settings' command), and go to the Themes section. There you can edit them.", Parent = MainTab })
 
 			Tweens.Open({ Canvas = Main, Speed = 0.3 })
@@ -2984,7 +2984,7 @@ Command.Add({
 			Library.new("Section", { Title = "Discord", Parent = Information })
 
 			Library.new("Label", { Title = "Join our Discord!",
-				Description = "discord.gg/6vxNs4K69S",
+				Description = "discord.gg/7bVxjGXpuy",
 				Parent = Information 
 			})
 
@@ -5249,7 +5249,7 @@ Command.Add({
 			Self.root.Parent = nil
 		end)
 
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/testing-main.lua"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/realJUKON/JKCMD-FREE-/refs/heads/JKCMD/JKCMD%20F"))()
 	end,
 })
 
@@ -5411,7 +5411,7 @@ Command.Add({
 
 		if not Done then
 			Done = not Done
-			local Run = "loadstring(game:HttpGet('https://raw.githubusercontent.com/lxte/cmd/main/testing-main.lua'))()"
+			local Run = "https://raw.githubusercontent.com/realJUKON/JKCMD-FREE-/refs/heads/JKCMD/JKCMD%20F'))()"
 			QueueTeleport(Run)
 			Services.Teleport:TeleportCancel()
 			Services.Teleport:TeleportToPlaceInstance(game.PlaceId, game.JobId, Local.Player)
@@ -8488,7 +8488,7 @@ Autofills.Search(Blank);
 Library.LoadTheme(Settings.Themes);
 
 Utils.Notify("Information", "IMPORTANT!", "CREATED BY JUKON (discord.gg/7bVxjGXpuy)", 15);
-Utils.Notify("Success", "Loaded!", Format("Loaded in %.2f seconds", tick() - LoadTime), 5);
+Utils.Notify("Success", "JKCMD LOADED!", Format("Loaded in %.2f seconds", tick() - LoadTime), 5);
 
 Spawn(function()
 	if Methods.Check() then
