@@ -209,3 +209,4 @@ function Blur:bindToRenderStep()
 end;
 
 Blur.__index = Blur;
+return Blur;
