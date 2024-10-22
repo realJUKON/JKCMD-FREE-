@@ -1,1 +1,1 @@
-UPDATES IN DISCORD SERVER: discord.gg/7bVxjGXpuy
+https://guns.lol/jukon
