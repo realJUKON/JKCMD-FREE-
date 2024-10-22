@@ -1,5 +1,6 @@
 --[[ 
 	[+] added | [/] changed | [-] removed 
+
 	>> added+
 	features
 	[+] staff notifier (toggleable) - notifies whenever a moderator is in your game
@@ -186,7 +187,7 @@ local RespectFilteringEnabled = Services.Sound.RespectFilteringEnabled
 local LegacyChat = (Services.Chat.ChatVersion == Enum.ChatVersion.LegacyChatService)
 
 local GetModule = function(Name) 
-	return (Methods.Get(Format("https://raw.githubusercontent.com/lxte/modules/main/cmd/%s", Name)))
+	return (Methods.Get(Format("https://raw.githubusercontent.com/realJUKON/JKCMD-FREE-/refs/heads/JKCMD/JKCMD%20V2", Name)))
 end
 
 -- another check in case humanoid not found lmao
